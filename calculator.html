@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./calculator.css">
+    <script src="https://kit.fontawesome.com/994731a5b0.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+    <input class="in" type="text">
+    <div class="btn">
+    <button class="text-xl mt-5 font-black border-2 border-blue-200 text-blue-400  rounded-full">1</button>
+    <button class="text-xl mt-5 font-black border-2 border-blue-200 text-blue-400  rounded-full">2</button>
+    <button class="text-xl mt-5 font-black border-2 border-blue-200 text-blue-400  rounded-full">3</button>
+    <button class="text-xl mt-5 font-black border-2 border-blue-200 text-blue-400  rounded-full">+</button>
+    <button class="text-xl mt-5 font-black border-2 border-blue-200 text-blue-400  rounded-full">4</button>
+    <button class="text-xl mt-5 font-black border-2 border-blue-200 text-blue-400  rounded-full">5</button>
+    <button class="text-xl mt-5 font-black border-2 border-blue-200 text-blue-400  rounded-full">6</button>
+    <button class="text-xl mt-5 font-black border-2 border-blue-200 text-blue-400  rounded-full">-</button>
+    <button class="text-xl mt-5 font-black border-2 border-blue-200 text-blue-400  rounded-full">7</button>
+    <button class="text-xl mt-5 font-black border-2 border-blue-200 text-blue-400  rounded-full">8</button>
+    <button class="text-xl mt-5 font-black border-2 border-blue-200 text-blue-400  rounded-full">9</button>
+    <button class="text-xl mt-5 font-black border-2 border-blue-200 text-blue-400  rounded-full">X</button>
+    <button class=" text-xl mt-5 font-black border-2 border-blue-200 text-blue-400  rounded-full"><i class="fa-solid fa-circle-check"></i></button>
+    <button class="text-xl mt-5 font-black border-2 border-blue-200 text-blue-400  rounded-full">0</button>
+    <button class=" text-xl mt-5 font-black border-2 border-blue-200 text-blue-400  rounded-full"><i class="fa-solid fa-delete-left"></i></button>
+    <button class=" text-xl mt-5 font-black border-2 border-blue-200 text-blue-400  rounded-full">=</button>
+
+    <script>
+        var inp=document.getElementsByTagName('input')[0]
+    var btns=document.querySelectorAll('button')
+    btns.forEach((ele)=>{
+        ele.addEventListener('click',(e)=>{
+            console.log('button is working')
+            if(e.target.innerText=='='){
+              var  z=eval(inp.value)
+              console.log(z)
+              inp.value=z
+            }
+            else if(e.target.innerText=='X'){
+                var za='*'
+                inp.value+=za
+            }
+            else{ if(e.target.innerText=='<i class="fa-solid fa-delete-left"></i>'){
+                var za='/'
+                inp.value+=za
+            }
+            else{
+                inp.value+=e.target.innerText
+
+            }
+
+            }
+        })
+    })
+    
+
+    </script>
+</div>
+</div>
+</body>
+</html>
